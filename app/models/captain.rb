@@ -10,9 +10,9 @@ class Captain < ActiveRecord::Base
   end
   
   def self.talented_seafarers
-    mb_cpt_ids = Boat.joins(:classifications).where(:classifications => {name: ["Motorboat"]}).pluck(:captain_id)
-    sb_cpt_ids = Boat.joins(:classifications).where(:classifications => {name: ["Sailboat"]}).pluck(:captain_id)
-    Captain.where(id: mb_cpt_ids & sb_cpt_ids)
+    mb_cpts = Boat.joins(:classifications).where(:classifications => {name: ["Motorboat"]}).pluck(:captain_id)
+    sb_cpts = Boat.joins(:classifications).where(:classifications => {name: ["Sailboat"]}).pluck(:captain_id)
+    Captain.where(id: mb_cpts & sb_cpts)
     
   end
   
