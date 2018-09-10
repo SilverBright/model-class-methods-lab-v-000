@@ -20,4 +20,6 @@ class Boat < ActiveRecord::Base
   end
   
   
+  
+  
 end
