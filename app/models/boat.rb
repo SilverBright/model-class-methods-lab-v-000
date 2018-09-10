@@ -7,7 +7,9 @@ class Boat < ActiveRecord::Base
     Boat.limit(5)
   end
   
-  
+  def self.dinghy
+    Boat.having('length <= 20').group('id')
+  end
   
   
 end
