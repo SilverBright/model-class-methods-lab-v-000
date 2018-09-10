@@ -13,7 +13,6 @@ class Captain < ActiveRecord::Base
     motorboat_cpts = Boat.joins(:classifications).where(:classifications => {name: ["Motorboat"]}).pluck(:captain_id)
     sailboat_cpts = Boat.joins(:classifications).where(:classifications => {name: ["Sailboat"]}).pluck(:captain_id)
     Captain.where(id: motorboat_cpts & sailboat_cpts)
-    
   end
   
 end
