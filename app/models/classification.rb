@@ -6,4 +6,6 @@ class Classification < ActiveRecord::Base
     Classification.all
   end
   
+  def 
+  
 end
