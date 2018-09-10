@@ -10,7 +10,7 @@ class Captain < ActiveRecord::Base
   end
   
   def self.talented_seafarers
-    Captain.includes(boats: :classifications).where(classifications: {name: "Sailboat"}).uniq
+    where("id IN (?)", self.sailors.pluck(:id) & self.sailboats.pluck(:id))
   end
   
 end
