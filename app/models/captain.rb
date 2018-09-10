@@ -10,7 +10,7 @@ class Captain < ActiveRecord::Base
   end
   
   def self.talented_seafarers
-    Captain.includes("id IN (?)", self.sailors.pluck(:id) & self.sailboats.pluck(:id))
+    Captain.includes("id IN (?)", self.motorboats.pluck(:id) & self.sailboats.pluck(:id))
   end
   
 end
