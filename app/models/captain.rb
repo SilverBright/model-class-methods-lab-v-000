@@ -15,4 +15,6 @@ class Captain < ActiveRecord::Base
     Captain.where(id: motorboat_cpts & sailboat_cpts)
   end
   
+  
+  
 end
